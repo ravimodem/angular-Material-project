@@ -1,0 +1,79 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<!-- 
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()" >menu</mat-icon>
+        </button>
+        <h1>Side Nav</h1>
+    <span class="example-spacer"></span>
+    <mat-form-field >
+        <input matInput placeholder="Searching">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="logOut-button" mat-raised-button color="warn" (click)="logout()">LogOut</button>
+</mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container >
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <a mat-list-item>Home</a>
+            <a mat-list-item >Home
+             
+            </a>
+           
+            <a mat-list-item>Home sdfhkjghyugtfytduvbyuy</a>
+            <a mat-list-item>Home</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 84vh;"></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->
+
+
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="isExpanded">
+        <mat-nav-list>
+
+            <mat-list-item (click)="isExpanded = !isExpanded">
+                <mat-icon mat-list-icon class="chevron-button " [ngClass]="{ rotated: isExpanded }">chevron_right
+                </mat-icon>
+            </mat-list-item>
+
+            <mat-list-item [routerLink]="'home'">
+                <mat-icon mat-list-icon matTooltip="Dashboard" class="menu-item">home</mat-icon>
+                <span *ngIf="isExpanded" class="menu-item">Dashboard</span>
+            </mat-list-item>
+
+            <mat-list-item [routerLink]="''">
+                <mat-icon mat-list-ico class="menu-item" n>important_devices</mat-icon>&nbsp;
+                <span *ngIf="isExpanded" class="menu-item">Info</span>
+            </mat-list-item>
+
+            <mat-list-item [routerLink]="''">
+                <mat-icon mat-list-icon class="menu-item">supervisor_account</mat-icon>
+                <span *ngIf="isExpanded" class="menu-item">User</span>
+            </mat-list-item>
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Content - rendered Content for the current router path into the <router-outlet>, e.g. /dashboard or /info-->
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <h1>Side Nav</h1>
+                <span class="example-spacer"></span>
+                <mat-form-field>
+                    <input matInput placeholder="Searching">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="logOut-button" mat-raised-button color="warn" (click)="logout()">LogOut</button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

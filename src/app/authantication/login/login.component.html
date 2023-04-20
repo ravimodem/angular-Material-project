@@ -1,0 +1,48 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+
+<div class=" backgroud-details">
+    <div class="login-form">
+        <div class="aligin-center">
+            <form class="example-form" (ngSubmit)="submit()">
+                <h1>Login Form</h1>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput [formControl]="email" [errorStateMatcher]="matcher"
+                        placeholder="Ex. chakra@gmail.com">
+                    <mat-hint>Enter Email</mat-hint>
+                    <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="email.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <br><br>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [formControl]="password" [errorStateMatcher]="matcher"
+                        placeholder="Ex. 123456789">
+                    <mat-hint>Enter Password</mat-hint>
+                    <mat-error *ngIf="password.hasError('password') && !password.hasError('required')">
+                        Please enter a valid password
+                    </mat-error>
+                    <mat-error *ngIf="password.hasError('password') && !password.hasError('minLength')">
+                        Minimum 4 numbers required
+                    </mat-error>
+                    <mat-error *ngIf="password.hasError('password') && !password.hasError('maxLength')">
+                        Maximum 10 numbers required
+                    </mat-error>
+                    <mat-error *ngIf="password.hasError('required')">
+                        password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <br><br>
+                <h4>Don't have an account?
+                    <a routerLink="/register" style="text-decoration:none;">signUp</a>
+                </h4>
+                <br>
+                <button class="login_button" mat-raised-button color="primary">Login</button>
+            </form>
+        </div> 
+    </div>
+</div>

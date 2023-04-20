@@ -1,0 +1,30 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.logOut-button {
+    width: 100px;
+}
+
+
+/* mat-sidenav {
+    background-color: rgb(247, 235, 235);
+} */
+
+
+/* .menu-item {
+    color: white;
+} */
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+.chevron-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+}
+
+.chevron-button.rotated {
+    transform: rotate(180deg);
+}
