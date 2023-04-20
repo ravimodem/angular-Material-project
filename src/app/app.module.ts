@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WildcardComponent } from './authantication/wildcard/wildcard.component';
 import { MaterialModule } from './material/material.module';
+import { FooterComponent } from './footer/footer/footer.component';
 
 
 
@@ -20,6 +21,7 @@ import { MaterialModule } from './material/material.module';
     LoginComponent,
     RegisterComponent,
     WildcardComponent,
+    FooterComponent,
 
   ],
   imports: [
